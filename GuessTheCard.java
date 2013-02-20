@@ -7,11 +7,11 @@ class WhichCard {
     int suit = (int)(3.0 * Math.random()) + 20;
     
     //greeting   
-    TextIO.putln("Can you guess the card I hold in my hand?");
-    TextIO.put("I'll let you know if your guess is right or how it is wrong.");
-    TextIO.put("Enter a value guess (like 3 or Jack):");
+    System.out.println("Can you guess the card I hold in my hand?");
+    System.out.print("I'll let you know if your guess is right or how it is wrong.");
+    System.out.print("Enter a value guess (like 3 or Jack):");
     String a = TextIO.getlnString(); //get the value guess
-    TextIO.put("Now guess the suit:");  
+    System.out.print("Now guess the suit:");  
     String b = TextIO.getlnString(); //get the suit guess
     
     //if the guess (b) is not equal to the selected number, 
@@ -23,40 +23,40 @@ class WhichCard {
 //prompts to re-input guesses for wrong values or suits as appropriate. 
     while (va != value && vb != suit) {
       if (va < value && vb != suit){        //for incorrect suit and low value
-        TextIO.putln("The suit is wrong and the value is higher.");
-        TextIO.put("Guess again:");
+        System.out.println("The suit is wrong and the value is higher.");
+        System.out.print("Guess again:");
         a = TextIO.getlnString();
-        TextIO.put("of");
+        System.out.print("of");
         b = TextIO.getlnString();
         va = convertIt(a);
         vb = convertIt(b);
       }
       if (va > value && vb != suit) {        //for incorrect suit and high value
-        TextIO.putln("The suit is wrong and the value is lower.");
-        TextIO.put("Guess again:");
+        System.out.println("The suit is wrong and the value is lower.");
+        System.out.print("Guess again:");
         a = TextIO.getlnString();
-        TextIO.put("of");
+        System.out.print("of");
         b = TextIO.getlnString();
         va = convertIt(a);
         vb = convertIt(b);
       }
     }
     while (va == value && vb != suit) {      //for incorrect suit and correct value
-      TextIO.putln("You've got the right value! But the suit is wrong.");
-      TextIO.put("Guess the suit:");
+      System.out.print("You've got the right value! But the suit is wrong.");
+      System.out.print("Guess the suit:");
       b = TextIO.getlnString();
       vb = convertIt(b);
     }
     while (va != value && vb == suit) {      //for correct suit and low value
       if (va < value) {
-        TextIO.putln("The suit is right but the value is higher.");
-        TextIO.put("Guess the value again:");
+        System.out.println("The suit is right but the value is higher.");
+        System.out.print("Guess the value again:");
         a = TextIO.getlnString();
         va = convertIt(a);
       }
       if (va > value) {                       //for correct suit and high value
-        TextIO.putln("The suit is right but the value is lower.");
-        TextIO.put("Guess the value again:");
+        System.out.println("The suit is right but the value is lower.");
+        System.out.print("Guess the value again:");
         a = TextIO.getlnString();
         if (a == "A") {va=1;}
         va = convertIt(a);
@@ -71,11 +71,11 @@ class WhichCard {
       if (vb == 21) {b = "Spades";}
       if (vb == 22) {b = "Clubs";}
       if (vb == 23) {b = "Hearts";}
-      TextIO.put("Yes, my card is the ");
-      TextIO.put(a);
-      TextIO.put(" of ");
-      TextIO.put(b);
-      TextIO.putln("!");                       //the end.
+      System.out.print("Yes, my card is the ");
+      System.out.print(a);
+      System.out.print(" of ");
+      System.out.print(b);
+      System.out.println("!");                       //the end.
     }
   }
   
