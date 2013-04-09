@@ -1,6 +1,6 @@
 // a card guessing game!
 
-class WhichCard {
+class GuessTheCard {
   
   public static void main(String[] args) {
     int value = (int)(13.0 * Math.random()) + 1;   
